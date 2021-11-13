@@ -19,35 +19,4 @@ public class Department {
     @OneToOne
     private Employee director;
 
-    public Employee getDirector() {
-        return director;
-    }
-
-    public void setDirector(Employee director) {
-        this.director = director;
-    }
-
-    public String getContactInfo() {
-        return contactInfo;
-    }
-
-    public void setContactInfo(String contactInfo) {
-        this.contactInfo = contactInfo;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 }

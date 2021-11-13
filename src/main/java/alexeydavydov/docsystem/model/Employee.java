@@ -35,11 +35,9 @@ public class Employee {
     @ManyToOne
     private Assignment assignmentForEmployee;
 
-
     @Override
     public String toString() {
         return "Работник. ФИО: " + this.firstname + " " + this.surname + " " + this.patronymic + ". Должность — " + this.position + ". ";
     }
-
 
 }
