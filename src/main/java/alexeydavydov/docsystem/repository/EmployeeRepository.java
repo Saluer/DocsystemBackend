@@ -17,7 +17,6 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 
     Employee findByFirstname(String firstname);
 
-
     @Transactional
     @Modifying
     @Query("update Employee e set e.firstname = :firstname where e.id = :id")
