@@ -28,10 +28,74 @@ public class Assignment {
     private String content;
 
     @ManyToOne
+    @JoinColumn
     private Employee author;
 
     @OneToMany
     private List<Employee> operators;
 
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public Date getDeadline() {
+        return deadline;
+    }
+
+    public void setDeadline(Date deadline) {
+        this.deadline = deadline;
+    }
+
+    public boolean isControlSign() {
+        return controlSign;
+    }
+
+    public void setControlSign(boolean controlSign) {
+        this.controlSign = controlSign;
+    }
+
+    public boolean isOperateSign() {
+        return operateSign;
+    }
+
+    public void setOperateSign(boolean operateSign) {
+        this.operateSign = operateSign;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public Employee getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Employee author) {
+        this.author = author;
+    }
+
+    public List<Employee> getOperators() {
+        return operators;
+    }
+
+    public void setOperators(List<Employee> operators) {
+        this.operators = operators;
+    }
 }

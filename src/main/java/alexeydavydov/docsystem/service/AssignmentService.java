@@ -14,6 +14,10 @@ import java.util.Optional;
 public class AssignmentService {
     private final AssignmentRepository assignmentRepository;
     //Сомнительно
+    /*
+    TODO Решить, оставить ли так или произвести инверсию контроля.
+    Можно создать сервис верхнего уровня, вызывающий сервис Employee и Assignment.
+    */
     private final EmployeeService employeeService;
 
 
@@ -28,7 +32,7 @@ public class AssignmentService {
     }
 
     //TODO убрать по возможности заглушку
-    final int myId = 0;
+    final int myId = 1;
 
     public List<Assignment> findAssignmentsFromMe() {
         Optional<Employee> optionalEmployee = employeeService.findById(myId);
