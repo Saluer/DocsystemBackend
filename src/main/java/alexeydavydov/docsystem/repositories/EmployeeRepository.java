@@ -1,6 +1,6 @@
-package alexeydavydov.docsystem.repository;
+package alexeydavydov.docsystem.repositories;
 
-import alexeydavydov.docsystem.model.Employee;
+import alexeydavydov.docsystem.domain.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

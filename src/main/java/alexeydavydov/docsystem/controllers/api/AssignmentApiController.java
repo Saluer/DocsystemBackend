@@ -1,21 +1,22 @@
-package alexeydavydov.docsystem.controller;
+package alexeydavydov.docsystem.controllers.api;
 
-import alexeydavydov.docsystem.model.Assignment;
-import alexeydavydov.docsystem.model.Employee;
-import alexeydavydov.docsystem.service.AssignmentService;
+import alexeydavydov.docsystem.domain.Assignment;
+import alexeydavydov.docsystem.services.api.AssignmentAPIService;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
-@RequestMapping("/assignments")
-public class AssignmentController {
+@RequestMapping("/api/assignments")
+public class AssignmentApiController {
 
-    private final AssignmentService assignmentService;
+    private final AssignmentAPIService assignmentService;
 
-    AssignmentController(AssignmentService assignmentService) {
+    AssignmentApiController(AssignmentAPIService assignmentService) {
         this.assignmentService = assignmentService;
     }
 

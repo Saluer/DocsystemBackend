@@ -1,7 +1,6 @@
-package alexeydavydov.docsystem.model;
+package alexeydavydov.docsystem.domain;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "employee")
@@ -24,6 +23,8 @@ public class Employee {
     @Column
     private String position;
 
+    @ManyToOne
+    private Department department;
 
     @Override
     public String toString() {

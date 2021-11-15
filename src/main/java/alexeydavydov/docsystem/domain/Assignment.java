@@ -1,4 +1,4 @@
-package alexeydavydov.docsystem.model;
+package alexeydavydov.docsystem.domain;
 
 import javax.persistence.*;
 import java.sql.Date;

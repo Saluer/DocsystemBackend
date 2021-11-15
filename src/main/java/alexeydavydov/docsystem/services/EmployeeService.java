@@ -1,7 +1,7 @@
-package alexeydavydov.docsystem.service;
+package alexeydavydov.docsystem.services;
 
-import alexeydavydov.docsystem.model.Employee;
-import alexeydavydov.docsystem.repository.EmployeeRepository;
+import alexeydavydov.docsystem.domain.Employee;
+import alexeydavydov.docsystem.repositories.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,15 +17,13 @@ public class EmployeeService {
         this.employeeRepository = employeeRepository;
     }
 
-    public void createEmployee(Employee employee) {
-        employeeRepository.save(employee);
+    public List<Employee> findAll() {
+        return employeeRepository.findAll();
     }
 
     public Optional<Employee> findById(int id) {
         return employeeRepository.findById(id);
     }
 
-    public List<Employee> findAll() {
-        return employeeRepository.findAll();
-    }
+
 }

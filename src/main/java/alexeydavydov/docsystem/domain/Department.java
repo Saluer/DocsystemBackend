@@ -1,6 +1,7 @@
-package alexeydavydov.docsystem.model;
+package alexeydavydov.docsystem.domain;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table
@@ -18,6 +19,9 @@ public class Department {
 
     @OneToOne
     private Employee director;
+
+    @ManyToOne
+    private Organization organization;
 
     public int getId() {
         return id;
