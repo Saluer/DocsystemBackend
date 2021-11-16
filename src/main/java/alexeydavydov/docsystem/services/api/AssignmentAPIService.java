@@ -13,6 +13,8 @@ import java.util.Optional;
 @Service
 public class AssignmentAPIService {
 
+    //TODO убрать по возможности заглушку
+    final int myId = 1;
     private final AssignmentService assignmentService;
     private final EmployeeService employeeService;
 
@@ -25,9 +27,6 @@ public class AssignmentAPIService {
     public List<Assignment> findAll() {
         return assignmentService.findAll();
     }
-
-    //TODO убрать по возможности заглушку
-    final int myId = 1;
 
     public List<Assignment> findAssignmentsFromMe() {
         Optional<Employee> optionalEmployee = employeeService.findById(myId);

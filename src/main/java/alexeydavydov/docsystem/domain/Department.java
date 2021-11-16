@@ -1,6 +1,7 @@
 package alexeydavydov.docsystem.domain;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table
@@ -15,18 +16,18 @@ public class Department {
 
     @Column
     private String contactInfo;
+
     @OneToOne
     private Employee director;
-    @ManyToOne
-    @JoinColumn
-    private Organization organization;
+    @OneToMany
+    private List<Employee> employees;
 
-    public Organization getOrganization() {
-        return organization;
+    public List<Employee> getEmployees() {
+        return employees;
     }
 
-    public void setOrganization(Organization organization) {
-        this.organization = organization;
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
     }
 
     public int getId() {

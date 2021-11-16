@@ -27,11 +27,27 @@ public class Assignment {
     @Column
     private String content;
 
+    @ManyToMany
+    private List<Employee> operators;
+
     @ManyToOne
-    @JoinColumn
     private Employee author;
 
+    public Employee getAuthor() {
+        return author;
+    }
 
+    public void setAuthor(Employee author) {
+        this.author = author;
+    }
+
+    public List<Employee> getOperators() {
+        return operators;
+    }
+
+    public void setOperators(List<Employee> operators) {
+        this.operators = operators;
+    }
 
     public int getId() {
         return id;
@@ -81,12 +97,5 @@ public class Assignment {
         this.content = content;
     }
 
-    public Employee getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(Employee author) {
-        this.author = author;
-    }
 
 }

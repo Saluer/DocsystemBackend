@@ -1,6 +1,7 @@
 package alexeydavydov.docsystem.domain;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "employee")
@@ -23,13 +24,6 @@ public class Employee {
     @Column
     private String position;
 
-    @ManyToOne
-    @JoinColumn
-    private Department department;
-
-    @ManyToOne
-    @JoinColumn
-    private Assignment assignmentToOperate;
 
     @Override
     public String toString() {
