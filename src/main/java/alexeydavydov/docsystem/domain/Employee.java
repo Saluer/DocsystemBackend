@@ -24,7 +24,12 @@ public class Employee {
     private String position;
 
     @ManyToOne
+    @JoinColumn
     private Department department;
+
+    @ManyToOne
+    @JoinColumn
+    private Assignment assignmentToOperate;
 
     @Override
     public String toString() {

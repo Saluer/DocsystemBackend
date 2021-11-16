@@ -31,8 +31,6 @@ public class Assignment {
     @JoinColumn
     private Employee author;
 
-    @OneToMany
-    private List<Employee> operators;
 
 
     public int getId() {
@@ -91,11 +89,4 @@ public class Assignment {
         this.author = author;
     }
 
-    public List<Employee> getOperators() {
-        return operators;
-    }
-
-    public void setOperators(List<Employee> operators) {
-        this.operators = operators;
-    }
 }

@@ -28,6 +28,7 @@ public class AssignmentService {
     }
 
     public List<Assignment> findByOperatorsContaining(Employee operator) {
-        return this.assignmentRepository.findByOperatorsContaining(operator);
+        /*return this.assignmentRepository.findByOperatorsContaining(operator);*/
+        return null;
     }
 }

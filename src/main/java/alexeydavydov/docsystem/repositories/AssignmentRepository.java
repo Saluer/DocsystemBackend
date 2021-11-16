@@ -13,6 +13,6 @@ public interface AssignmentRepository extends JpaRepository<Assignment, Integer>
 
     List<Assignment> findByAuthor(Employee author);
 
-    List<Assignment> findByOperatorsContaining(Employee employee);
+/*    List<Assignment> findByOperatorsContaining(Employee employee);*/
 
 }

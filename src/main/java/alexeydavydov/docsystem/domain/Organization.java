@@ -1,7 +1,6 @@
 package alexeydavydov.docsystem.domain;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table
