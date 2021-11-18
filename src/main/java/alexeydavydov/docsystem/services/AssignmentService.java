@@ -31,4 +31,8 @@ public class AssignmentService {
         return assignmentRepository.findByOperatorsContaining(employee);
     }
 
+    public Assignment create(Assignment assignment) {
+        return assignmentRepository.save(assignment);
+    }
+
 }
