@@ -54,6 +54,12 @@ public class AssignmentAPIService {
     public Assignment createAssignment(@RequestBody CreateAssignmentRequest request) {
         Optional<Employee> author = employeeService.findById(request.getAuthorId());
         Assignment assignment = new Assignment();
+        assignment.setAuthor(author.get());
+        assignment.setContent(request.getContent());
+        assignment.setSubject(request.getSubject());
+        assignment.setDeadline(request.getDeadline());
+        assignment.setControlSign(request.isControlSign());
+        assignment.setOperateSign(request.isOperateSign());
         return assignmentService.create(assignment);
     }
 }

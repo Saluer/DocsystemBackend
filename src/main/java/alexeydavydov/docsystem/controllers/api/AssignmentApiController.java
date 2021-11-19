@@ -37,8 +37,8 @@ public class AssignmentApiController {
     }
 
     @PostMapping("/create")
-    public Assignment createAssignment(@RequestBody CreateAssignmentRequest request) {
-        log.warn("Получен запрос на создание нового поручения: " + request);
+    public Assignment createAssignment(CreateAssignmentRequest request) {
+        log.info("Получен запрос на создание нового поручения: " + request);
 
         return assignmentAPIService.createAssignment(request);
     }
