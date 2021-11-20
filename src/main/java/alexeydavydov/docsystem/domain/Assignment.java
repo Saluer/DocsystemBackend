@@ -4,6 +4,8 @@ import javax.persistence.*;
 import java.sql.Date;
 import java.util.List;
 
+
+//TODO сделать так, чтобы связь от n к m была уникальной и нельзя было создать такой более одной. (unique?)
 @Entity
 @Table
 public class Assignment {

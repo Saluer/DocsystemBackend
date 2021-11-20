@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service
 public class EmployeeAPIService {
-    private EmployeeService employeeService;
+    private final EmployeeService employeeService;
 
     @Autowired
     public EmployeeAPIService(EmployeeService employeeService) {
@@ -20,8 +20,4 @@ public class EmployeeAPIService {
         return employeeService.findAll();
     }
 
-    //Нужно, чтобы возвращалась вся структура: от данных организации до данных сотрудников подразделений
-    public List<Employee> getOrganizationStructure() {
-        return null;
-    }
 }

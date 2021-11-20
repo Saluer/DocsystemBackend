@@ -23,6 +23,10 @@ public class AssignmentService {
         return assignmentRepository.findAll();
     }
 
+    public Assignment findById(int id) {
+        return this.assignmentRepository.findById(id);
+    }
+
     public List<Assignment> findByAuthor(Employee author) {
         return this.assignmentRepository.findByAuthor(author);
     }
@@ -33,6 +37,14 @@ public class AssignmentService {
 
     public Assignment create(Assignment assignment) {
         return assignmentRepository.save(assignment);
+    }
+
+    public Assignment update(Assignment assignment) {
+        return assignmentRepository.save(assignment);
+    }
+
+    public void delete(Assignment assignment) {
+        assignmentRepository.delete(assignment);
     }
 
 }

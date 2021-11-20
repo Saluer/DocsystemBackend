@@ -10,9 +10,12 @@ import org.slf4j.LoggerFactory;
 @SpringBootApplication
 public class DocsystemApplication {
 
-    @Autowired
-    private EmployeeService employeeService;
+    private final EmployeeService employeeService;
     private static final Logger log = LoggerFactory.getLogger(DocsystemApplication.class);
+
+    public DocsystemApplication(EmployeeService employeeService) {
+        this.employeeService = employeeService;
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(DocsystemApplication.class, args);

@@ -1,6 +1,5 @@
 package alexeydavydov.docsystem.services;
 
-import alexeydavydov.docsystem.domain.Assignment;
 import alexeydavydov.docsystem.domain.Employee;
 import alexeydavydov.docsystem.repositories.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +24,5 @@ public class EmployeeService {
     public Optional<Employee> findById(int id) {
         return employeeRepository.findById(id);
     }
-
-
-
 
 }

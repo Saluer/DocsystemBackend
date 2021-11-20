@@ -2,25 +2,14 @@ package alexeydavydov.docsystem.requests;
 
 import java.sql.Date;
 
-
-public class CreateAssignmentRequest {
-
+public class UpdateAssignmentRequest {
     private String subject;
-
-
     private Date deadline;
-
-
     private boolean controlSign;
-
-
     private boolean operateSign;
-
-
     private String content;
-
-
     private int authorId;
+
 
     public Date getDeadline() {
         return deadline;

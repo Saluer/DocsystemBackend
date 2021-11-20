@@ -2,6 +2,7 @@ package alexeydavydov.docsystem.controllers.api;
 
 import alexeydavydov.docsystem.domain.Assignment;
 import alexeydavydov.docsystem.requests.CreateAssignmentRequest;
+import alexeydavydov.docsystem.requests.UpdateAssignmentRequest;
 import alexeydavydov.docsystem.services.api.AssignmentAPIService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,6 +22,8 @@ public class AssignmentApiController {
         this.assignmentAPIService = assignmentAPIService;
     }
 
+
+    //TODO подумать над добавление find в начале
     @GetMapping("")
     public List<Assignment> allAssignments() {
         return assignmentAPIService.findAll();
@@ -41,6 +44,27 @@ public class AssignmentApiController {
         log.info("Получен запрос на создание нового поручения: " + request);
 
         return assignmentAPIService.createAssignment(request);
+    }
+
+    @PostMapping("/update/{id}")
+    public Assignment updateAssignment(@PathVariable("id") int id, UpdateAssignmentRequest request) {
+        log.info("Получен запрос на редактирование поручения по следующему id: " + id + ". Данные запроса: " + request);
+
+        return assignmentAPIService.updateAssignment(id, request);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteAssignment(@PathVariable("id") int id) {
+        log.info("Получен запрос на удаление поручения по следующему id: " + id);
+
+        assignmentAPIService.deleteAssignment(id);
+    }
+
+    @GetMapping("/{id}")
+    public Assignment findAssignment(@PathVariable("id") int id) {
+        log.info("Получен запрос на получение поручения по следующему id: " + id);
+
+        return assignmentAPIService.findAssignmentById(id);
     }
 
 }
