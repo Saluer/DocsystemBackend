@@ -4,12 +4,10 @@ import alexeydavydov.docsystem.domain.Employee;
 import alexeydavydov.docsystem.services.EmployeeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin
 @RestController
@@ -28,6 +26,13 @@ public class EmployeeController {
         log.info("Получен запрос на получение всех сотрудников");
 
         return employeeService.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public Optional<Employee> findEmployeeById(@PathVariable("id") int id) {
+        log.info("Получен запрос на сотрудника по id: " + id);
+
+        return employeeService.findById(id);
     }
 
 }

@@ -66,7 +66,7 @@ public class AssignmentController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Assignment> findAssignment(@PathVariable int id) {
+    public Optional<Assignment> findAssignmentById(@PathVariable int id) {
         log.info("Получен запрос на получение поручения по следующему id: " + id);
 
         return assignmentService.findById(id);
