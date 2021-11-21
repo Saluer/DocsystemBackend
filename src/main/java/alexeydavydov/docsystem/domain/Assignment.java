@@ -1,5 +1,9 @@
 package alexeydavydov.docsystem.domain;
 
+import alexeydavydov.docsystem.requests.CreateAssignmentRequest;
+import alexeydavydov.docsystem.requests.UpdateAssignmentRequest;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.*;
 import java.sql.Date;
 import java.util.List;
@@ -34,6 +38,31 @@ public class Assignment {
 
     @ManyToOne
     private Employee author;
+
+
+    public Assignment() {
+    }
+
+    @Autowired
+    public Assignment(CreateAssignmentRequest request, Employee author) {
+        this.subject = request.getSubject();
+        this.deadline = request.getDeadline();
+        this.controlSign = request.isControlSign();
+        this.operateSign = request.isOperateSign();
+        this.content = request.getContent();
+        this.author = author;
+    }
+
+    @Autowired
+    public Assignment(UpdateAssignmentRequest request, int id, Employee author) {
+        this.id = id;
+        this.subject = request.getSubject();
+        this.deadline = request.getDeadline();
+        this.controlSign = request.isControlSign();
+        this.operateSign = request.isOperateSign();
+        this.content = request.getContent();
+        this.author = author;
+    }
 
     public Employee getAuthor() {
         return author;
