@@ -10,8 +10,6 @@ import java.util.List;
 @Repository
 public interface AssignmentRepository extends JpaRepository<Assignment, Integer> {
 
-    Assignment findById(int id);
-
     List<Assignment> findByAuthor(Employee author);
 
     List<Assignment> findByOperatorsContaining(Employee employee);

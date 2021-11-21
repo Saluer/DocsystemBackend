@@ -16,7 +16,6 @@ public class OrganizationService {
         this.organizationRepository = organizationRepository;
     }
 
-
     public Optional<Organization> findById(int id) {
         return organizationRepository.findById(id);
     }

@@ -52,11 +52,11 @@ public class AssignmentService {
     }
 
     public void deleteAssignment(int id) {
-        Assignment assignment = this.findById(id);
-        assignmentRepository.delete(assignment);
+        Optional<Assignment> assignment = this.findById(id);
+        assignmentRepository.delete(assignment.get());
     }
 
-    public Assignment findById(int id) {
+    public Optional<Assignment> findById(int id) {
         return this.assignmentRepository.findById(id);
     }
 

@@ -1,7 +1,5 @@
 package alexeydavydov.docsystem.requests;
 
-import org.springframework.stereotype.Component;
-
 import java.sql.Date;
 
 public class UpdateAssignmentRequest {

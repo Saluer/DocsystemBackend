@@ -2,7 +2,6 @@ package alexeydavydov.docsystem.domain;
 
 import alexeydavydov.docsystem.requests.CreateAssignmentRequest;
 import alexeydavydov.docsystem.requests.UpdateAssignmentRequest;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -43,7 +42,6 @@ public class Assignment {
     public Assignment() {
     }
 
-    @Autowired
     public Assignment(CreateAssignmentRequest request, Employee author) {
         this.subject = request.getSubject();
         this.deadline = request.getDeadline();
@@ -53,7 +51,6 @@ public class Assignment {
         this.author = author;
     }
 
-    @Autowired
     public Assignment(UpdateAssignmentRequest request, int id, Employee author) {
         this.id = id;
         this.subject = request.getSubject();
