@@ -11,7 +11,7 @@ public class ControlState extends State {
     void goToNextStep() {
         //При условии, что проставлены оба флага, состояние становится "Приём", иначе — состоянием "Доработка"
         if (this.assignment.isControlSign() && this.assignment.isOperateSign()) {
-            this.assignment.changeState(new ControlState(assignment));
+            this.assignment.changeState(new ModificationState(assignment));
         } else {
             this.assignment.changeState(new ReceivingState(assignment));
         }
