@@ -1,5 +1,8 @@
-package alexeydavydov.docsystem.domain;
+package alexeydavydov.docsystem.domain.assignment;
 
+import alexeydavydov.docsystem.domain.Employee;
+import alexeydavydov.docsystem.domain.assignment.states.PreparingState;
+import alexeydavydov.docsystem.domain.assignment.states.State;
 import alexeydavydov.docsystem.requests.CreateAssignmentRequest;
 import alexeydavydov.docsystem.requests.UpdateAssignmentRequest;
 
@@ -12,37 +15,34 @@ import java.util.List;
 @Entity
 @Table
 public class Assignment {
+    @Transient
+    State state;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(columnDefinition = "serial")
     private int id;
-
     @Column
     private String subject;
-
     @Column
     private Date deadline;
-
     @Column
     private boolean controlSign;
-
     @Column
     private boolean operateSign;
-
     @Column
     private String content;
-
     @ManyToMany
     private List<Employee> operators;
-
     @ManyToOne
     private Employee author;
 
-
     public Assignment() {
+        initState();
     }
 
     public Assignment(CreateAssignmentRequest request, Employee author) {
+        initState();
         this.subject = request.getSubject();
         this.deadline = request.getDeadline();
         this.controlSign = request.isControlSign();
@@ -52,6 +52,7 @@ public class Assignment {
     }
 
     public Assignment(UpdateAssignmentRequest request, int id, Employee author) {
+        initState();
         this.id = id;
         this.subject = request.getSubject();
         this.deadline = request.getDeadline();
@@ -59,6 +60,14 @@ public class Assignment {
         this.operateSign = request.isOperateSign();
         this.content = request.getContent();
         this.author = author;
+    }
+
+    void initState() {
+        this.state = new PreparingState(this);
+    }
+
+    public void changeState(State state){
+        this.state = state;
     }
 
     public Employee getAuthor() {

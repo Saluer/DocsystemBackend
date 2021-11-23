@@ -30,7 +30,7 @@ public class EmployeeController {
 
     @GetMapping("/{id}")
     public Optional<Employee> findEmployeeById(@PathVariable("id") int id) {
-        log.info("Получен запрос на сотрудника по id: " + id);
+        log.info("Получен запрос на получение сотрудника по id: " + id);
 
         return employeeService.findById(id);
     }

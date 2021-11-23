@@ -1,6 +1,6 @@
 package alexeydavydov.docsystem.controllers;
 
-import alexeydavydov.docsystem.domain.Assignment;
+import alexeydavydov.docsystem.domain.assignment.Assignment;
 import alexeydavydov.docsystem.requests.CreateAssignmentRequest;
 import alexeydavydov.docsystem.requests.UpdateAssignmentRequest;
 import alexeydavydov.docsystem.services.AssignmentService;

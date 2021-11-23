@@ -1,6 +1,6 @@
 package alexeydavydov.docsystem.services;
 
-import alexeydavydov.docsystem.domain.Assignment;
+import alexeydavydov.docsystem.domain.assignment.Assignment;
 import alexeydavydov.docsystem.domain.Employee;
 import alexeydavydov.docsystem.repositories.AssignmentRepository;
 import alexeydavydov.docsystem.requests.CreateAssignmentRequest;
