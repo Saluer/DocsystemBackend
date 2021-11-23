@@ -6,6 +6,7 @@ import alexeydavydov.docsystem.requests.UpdateAssignmentRequest;
 import alexeydavydov.docsystem.services.AssignmentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,28 +18,29 @@ import java.util.Optional;
 public class AssignmentController {
 
     private final Logger log = LoggerFactory.getLogger(AssignmentController.class);
+
     private final AssignmentService assignmentService;
 
+    @Autowired
     AssignmentController(AssignmentService assignmentService) {
         this.assignmentService = assignmentService;
     }
 
 
-    //TODO подумать над добавление find в начале
     @GetMapping("")
-    public List<Assignment> allAssignments() {
+    public List<Assignment> findAllAssignments() {
         return assignmentService.findAll();
     }
 
     @GetMapping("/to/me")
-    public List<Assignment> allAssignmentsToMe() {
+    public List<Assignment> findAssignmentsToMe() {
         log.info("Получен запрос на получение всех поручений от меня");
 
         return assignmentService.findAssignmentsToMe();
     }
 
     @GetMapping("/from/me")
-    public List<Assignment> allAssignmentsFromMe() {
+    public List<Assignment> findAssignmentsFromMe() {
         log.info("Получен запрос на получение всех поручений мне");
 
         return assignmentService.findAssignmentsFromMe();

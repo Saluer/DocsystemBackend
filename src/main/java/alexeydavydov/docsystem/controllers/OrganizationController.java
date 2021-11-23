@@ -4,6 +4,7 @@ import alexeydavydov.docsystem.domain.Organization;
 import alexeydavydov.docsystem.services.OrganizationService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -15,6 +16,7 @@ public class OrganizationController {
     private final Logger log = LoggerFactory.getLogger(OrganizationController.class);
     private final OrganizationService organizationService;
 
+    @Autowired
     OrganizationController(OrganizationService organizationService) {
         this.organizationService = organizationService;
     }

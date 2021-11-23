@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @Service
 public class AssignmentService {
-    //TODO убрать по возможности заглушку
+    //Заглушка, заменяющая аутентификацию
     final int myId = 1;
     private final AssignmentRepository assignmentRepository;
     private final EmployeeService employeeService;
